@@ -8,8 +8,35 @@
 import SwiftUI
 
 struct NewsListView: View {
+    
+    
+    
+    
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image("Farming")
+                .resizable()
+                .scaledToFit()
+                
+            Image("GlobeAndMail")
+                .resizable()
+                .scaledToFit()
+                
+            Text("Maritime Farmers holding breath as record-dry spring wrings region")
+                .font(.title)
+                .fontWeight(.semibold)
+            
+            Divider()
+        
+            HStack {
+                Text("1h ago")
+                Spacer()
+                Image("ellipsis")
+            }
+            .foregroundColor(.secondary)
+        }
     }
 }
 
