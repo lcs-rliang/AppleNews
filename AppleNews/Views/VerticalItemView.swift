@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewsItemView: View {
+struct VerticalItemView: View {
     
     //MARK: Stored properties
     let image: String
@@ -22,37 +22,49 @@ struct NewsItemView: View {
             Image(image)
                 .resizable()
                 .scaledToFit()
+                .cornerRadius(10)
+                .padding([.top], 10.0)
                 
             Image(source)
+                
                 .resizable()
                 .scaledToFit()
+                .padding(.horizontal, 5.0)
+
+//                .frame(width: 120)
                 
             Text(headline)
-                .font(.title)
+                .font(.system(size: 9))
                 .fontWeight(.semibold)
+                .padding(.horizontal, 10.0)
+                
             
             Divider()
         
             HStack {
                 Text(timeSincePosted)
+                    .font(.system(size: 8))
                 Spacer()
                 Image("ellipsis")
             }
             .foregroundColor(.secondary)
-            .padding(15)
+            
+            .padding([.leading, .bottom], 10.0)
+            
         }
-        
+        .frame(width: 120, height: 220)
         .background (
-            RoundedRectangle(cornerRadius: 25.8)
+            RoundedRectangle(cornerRadius: 5.8)
                 .foregroundColor(Color("ArticleSlugBackground"))
             )
+        .padding(15)
         
     }
 }
 
-struct NewsItemView_Previews: PreviewProvider {
+struct VerticalItemView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsItemView(image: "EJeanCarroll",
+        VerticalItemView(image: "EJeanCarroll",
                      source: "Reuters",
                      headline: "E. Jean Carroll seeks $10 million in damages from Trump over post-verdict statements",
                      timeSincePosted: "1h ago")
